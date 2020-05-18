@@ -16,7 +16,7 @@ len(m) % 512 = 448 --- (1)
 
 Now the final padding step is to add the original length of the message expressed in binary to the end of the message resulting in a padded message which can be broken down into 32 bit parts which will be used in the next, key generation step to generate a series of 80 32 bit keys.
 
-The first keys are the 32 bit padding values we just generated, the rest of the keys are generated using the logic shown below:
+The first keys are the 32 bit padding values we just generated, the rest of the keys are generated using the logic shown below, in which &bigoplus; is a XOR operation:
 
 k<sub>i</sub> = k<sub>i-3</sub> &bigoplus; k<sub>i-8</sub> &bigoplus; k<sub>i-14</sub> &bigoplus; k<sub>i-16</sub>
 
