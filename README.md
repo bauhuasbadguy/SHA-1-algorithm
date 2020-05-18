@@ -23,7 +23,7 @@ k<sub>i</sub> = k<sub>i-3</sub> &bigoplus; k<sub>i-8</sub> &bigoplus; k<sub>i-14
 this value is then rotated left by one position and stored as the new key until 80 keys are generated in total. These keys are then used as the values of W<sub>t</sub> in the compression function shown below.
 
 <p align="center">
-<image src='./SHA-1-diagram.png'></image>
+<image src='./SHA-1-diagram.png' width="500px;"></image>
 </p>
 
 This image shows one round of the compression function which will be run for 80 rounds resulting in the 160 bit output. 
