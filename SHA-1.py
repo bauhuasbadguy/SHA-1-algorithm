@@ -153,15 +153,19 @@ def padding_function(message):
 def gen_keys(p):
 
     #Now enter the key generation step
+    
+
+    #count the number of keys we already have
+    no_pad_keys = int(len(p)/32)
 
     #convert the string into a series of 32 bit words
     keys = []
-    for i in range(16):
+    for i in range(no_pad_keys):
         keys.append(p[(i * 32):((i * 32) + 32)])
 
     #there is a mistake here. I only start at 16 because I am testing with such small messages. In reality
     #this step is simply run until 80 keys have been generated. This must be fixed
-    for i in range(16,80):
+    for i in range(no_pad_keys, 80):
 
         #XOR the previously found keys together to get the new key
         new_key = logical_XOR(keys[i-3], keys[i-8])
