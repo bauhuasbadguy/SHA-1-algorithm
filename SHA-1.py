@@ -119,10 +119,8 @@ def logical_NOT(A):
 
 
 def padding_function(message):
-
     
     #first convert the message to a string
-
     binary_message = text2bin(message)
 
 
@@ -154,7 +152,6 @@ def padding_function(message):
 
 def gen_keys(p):
 
-
     #Now enter the key generation step
 
     #convert the string into a series of 32 bit words
@@ -162,7 +159,8 @@ def gen_keys(p):
     for i in range(16):
         keys.append(p[(i * 32):((i * 32) + 32)])
 
-
+    #there is a mistake here. I only start at 16 because I am testing with such small messages. In reality
+    #this step is simply run until 80 keys have been generated. This must be fixed
     for i in range(16,80):
 
         #XOR the previously found keys together to get the new key
@@ -185,7 +183,6 @@ def gen_keys(p):
 
 def gen_letters(keys, h0, h1, h2, h3, h4):
 
-
     #iniciate the first set of temporary values
     A = h0
     B = h1
@@ -193,6 +190,7 @@ def gen_letters(keys, h0, h1, h2, h3, h4):
     D = h3
     E = h4
     
+    #work through all 80 rounds of the algorithm
     for i in range(80):
         #change up the way the function f works depending on the round
         #number
