@@ -42,8 +42,11 @@ each of which is 32 bits long. The values k<sub>t</sub> changes every 20 rounds 
 
 
 F<sub>0-19</sub> = (B & C)|(!B & D)
+
 F<sub>20-39</sub> = B &bigoplus; C &bigoplus; D
+
 F<sub>40-59</sub> = (B & C) | (B & D) | (C & D)
+
 F<sub>60-79</sub> = B &bigoplus; C &bigoplus; D
 
 
