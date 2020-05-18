@@ -30,6 +30,7 @@ This image shows one round of the compression function which will be run for 80 
 
 When the compression function starts the values of A-E are set to:
 
+```
 A - 0x67452301
 
 B - 0xEFCDAB89
@@ -39,9 +40,11 @@ C - 0x98BADCFE
 D - 0x10325476
 
 E - 0xC3D2E1F0
+```
 
 each of which is 32 bits long. The values k<sub>t</sub> changes every 20 rounds as does the behaviour of the function F. The value of W<sub>t</sub> is different in each round since it is set by the keys we generated before starting the compression function. The behavour of F is as follows:
 
+```
 F<sub>0-19</sub> = (B & C)|(!B & D)
 
 F<sub>20-39</sub> = B &bigoplus; C &bigoplus; D
@@ -49,9 +52,11 @@ F<sub>20-39</sub> = B &bigoplus; C &bigoplus; D
 F<sub>40-59</sub> = (B & C) | (B & D) | (C & D)
 
 F<sub>60-79</sub> = B &bigoplus; C &bigoplus; D
+```
 
 The values of K<sub>t</sub> are defined as follows:
 
+```
 K<sub>1</sub> = 0x5A827999
 
 K<sub>2</sub> = 0x6ED9EBA1
@@ -59,6 +64,7 @@ K<sub>2</sub> = 0x6ED9EBA1
 K<sub>3</sub> = 0x8F1BBCDC
 
 K<sub>4</sub> = 0xCA62C1D6
+```
 
 Once the process has run through the 80 rounds the 160 but result is returned as the hash of the input message.
 
