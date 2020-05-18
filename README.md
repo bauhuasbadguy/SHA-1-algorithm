@@ -30,13 +30,16 @@ This image shows one round of the compression function which will be run for 80 
 
 When the compression function starts the values of A-E are set to:
 
-```
 A - 0x67452301
+
 B - 0xEFCDAB89
+
 C - 0x98BADCFE
+
 D - 0x10325476
+
 E - 0xC3D2E1F0
-```
+
 
 each of which is 32 bits long. The values k<sub>t</sub> changes every 20 rounds as does the behaviour of the function F. The value of W<sub>t</sub> is different in each round since it is set by the keys we generated before starting the compression function. The behavour of F is as follows:
 
